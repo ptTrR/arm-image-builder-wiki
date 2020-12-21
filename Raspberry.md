@@ -1,11 +1,11 @@
 ---
 title: Raspberry Pi Image Builder
-description:  Image Builder for the Raspberry Pi 
+description: Image Builder for the Raspberry Pi
 published: 1
-date: 2020-12-17T00:28:08.972Z
+date: 2020-12-21T18:59:03.513Z
 tags: 
-editor: undefined
-dateCreated: 2020-12-02T06:12:23.094Z
+editor: markdown
+dateCreated: 2020-12-21T09:11:37.991Z
 ---
 
 ## Supported Boards
@@ -29,10 +29,6 @@ sudo apt install build-essential bison bc git dialog patch dosfstools zip unzip 
 This has been tested on an AMD64/x86_64 system running on [Debian Buster](https://www.debian.org/releases/buster/debian-installer/).
 
 Alternatively, you can run the command `make ccompile` in this directory.
-
-## Docker
-
-To build using [docker](https://www.docker.com/), following the instructions on the [Wiki](https://wiki.arm-image-builder.xyz/Docker).
 
 ---
 
