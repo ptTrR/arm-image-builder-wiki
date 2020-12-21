@@ -2,7 +2,7 @@
 title: Debian Image Builder
 description: 
 published: 1
-date: 2020-12-21T18:54:54.657Z
+date: 2020-12-21T19:02:28.202Z
 tags: 
 editor: markdown
 dateCreated: 2020-12-21T09:11:13.668Z
@@ -69,7 +69,13 @@ nano userdata.txt
 custom_defconfig=1
 MYCONFIG="nameofyour_defconfig"
 ```
-## Odroid N2/Plus eMMC
+### Compression
+```sh
+nano userdata.txt
+# change from 0 to 1
+auto=1        # compresses to img.xz
+```
+### Odroid N2/Plus eMMC
 ```sh
 nano userdata.txt
 # change from 0 to 1
