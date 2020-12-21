@@ -2,10 +2,10 @@
 title: Debian Image Builder
 description: 
 published: 1
-date: 2020-12-17T00:30:37.622Z
+date: 2020-12-21T18:53:28.780Z
 tags: 
-editor: undefined
-dateCreated: 2020-12-02T16:43:21.568Z
+editor: markdown
+dateCreated: 2020-12-21T09:11:13.668Z
 ---
 
 ## Supported boards
@@ -47,6 +47,7 @@ make dialogrc   # Set builder theme (optional)
 ### Config Menu
 
 ```sh
+Name:					 # Whats your name?
 Username:       # Your username
 Password:       # Your password
 Branding:       # Set ASCII text banner
@@ -118,17 +119,6 @@ swh -h
    -W       Edit wpa supplicant
    -I       Edit interfaces
 ```
-
-### Install wifi drivers
-```
-wifidrv -h
-
-   -1     rtl8812au (aircrack)
-   -2     rtl88x2bu (cilynx)
-   -3     rtl8821cu (brektrou)
-   -u     update script
-```
-
 ### CPU frequency scaling
 ```
 governor -h
