@@ -2,7 +2,7 @@
 title: Debian Image Builder
 description: 
 published: 1
-date: 2020-12-21T18:53:28.780Z
+date: 2020-12-21T18:54:54.657Z
 tags: 
 editor: markdown
 dateCreated: 2020-12-21T09:11:13.668Z
@@ -18,12 +18,12 @@ dateCreated: 2020-12-21T09:11:13.668Z
 
 ## Dependencies for Debian Buster AMD64/x86_64 cross compile
 
-```
+```sh
 sudo apt install build-essential bison bc git dialog patch dosfstools zip unzip qemu parted \ 
                  debootstrap qemu-user-static rsync kmod cpio flex libssl-dev libncurses5-dev \
                  device-tree-compiler libfdt-dev python3-distutils python3-dev swig fakeroot \
                  lzop lz4 aria2 pv toilet figlet crossbuild-essential-arm64 gcc-arm-none-eabi \
-                 distro-info-data lsb-release
+                 distro-info-data lsb-release python python-dev
                  
 Orange Pi R1 - sudo apt install -y crossbuild-essential-armhf
 ```
