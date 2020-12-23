@@ -2,22 +2,22 @@
 title: Helper for easily using Docker for building
 description: 
 published: 1
-date: 2020-12-22T08:20:39.694Z
+date: 2020-12-23T06:04:20.170Z
 tags: 
 editor: markdown
 dateCreated: 2020-12-22T08:20:39.694Z
 ---
 
-# Addon for the Arm Image Builder Docker
+## Addon for the Arm Image Builder Docker
 
-***All docker work done by:*** https://github.com/ptTrR/arm-image-builder-docker
+***All docker work done by:*** https://github.com/ptTrR/arm-img-builder-docker
 
 ### Builders:
 * https://github.com/pyavitz/rpi-img-builder
 * https://github.com/pyavitz/debian-image-builder
 
 The initial docker installation and setup still applies so I suggest you
-read the [README](https://github.com/ptTrR/arm-image-builder-docker/blob/main/README.md) before trying to use this.
+read the [README](https://github.com/ptTrR/arm-img-builder-docker/blob/main/README.md) before trying to use this.
 
 ---
 
@@ -43,12 +43,14 @@ Outside container:
   make native           Create docker container for native compiling
   make enter            If exited re-enter container
   make purge            Purge said container
+  make purge-all        Purge container and prune volumes
   make cleanup          Remove docker files
 
 Inside container: 
 
   make setup            Create docker Makefiles
   make pull             Update builders
+  make update           Update makefile and scripts
 
 For details consult the README.md
 ```
@@ -75,4 +77,13 @@ Example:
 mv rpi-3-debian-buster-5.10.1-v8-2020-12-21.img.xz /images/
 
 This applies to anything created in the container.
+```
+
+### Disclaimer
+```sh
+Amlogic:
+At the moment u-boot is not supported when native compiling. In the future I will be investigating
+as to why this is, but just know for the time being this does not work. 
+
+‘make cross’ appears to work as it should.
 ```
