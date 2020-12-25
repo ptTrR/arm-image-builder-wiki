@@ -2,13 +2,13 @@
 title: Raspberry Pi Image Builder
 description: Image Builder for the Raspberry Pi
 published: 1
-date: 2020-12-25T03:16:53.824Z
+date: 2020-12-25T03:52:17.498Z
 tags: 
 editor: markdown
 dateCreated: 2020-12-21T09:11:37.991Z
 ---
 
-![rpi-img-builder(2).png](/rpi-img-builder(2).png =640x320){.align-center}
+![rpi-img-builder](https://socialify.git.ci/pyavitz/rpi-img-builder/image?description=1&font=KoHo&forks=1&issues=1&logo=https%3A%2F%2Fupload.wikimedia.org%2Fwikipedia%2Fde%2Fthumb%2Fc%2Fcb%2FRaspberry_Pi_Logo.svg%2F475px-Raspberry_Pi_Logo.svg.png&owner=1&pattern=Charlie%20Brown&stargazers=1&theme=Dark =640x320){.align-center}
 ## Supported Boards
 
 The boards and distributions that are currently supported;
