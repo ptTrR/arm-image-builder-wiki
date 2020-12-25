@@ -2,13 +2,13 @@
 title: Raspberry Pi Image Builder
 description: Image Builder for the Raspberry Pi
 published: 1
-date: 2020-12-25T03:15:21.480Z
+date: 2020-12-25T03:16:53.824Z
 tags: 
 editor: markdown
 dateCreated: 2020-12-21T09:11:37.991Z
 ---
 
-![rpi-img-builder(2).png](/rpi-img-builder(2).png){.align-center}
+![rpi-img-builder(2).png](/rpi-img-builder(2).png =640x320){.align-center}
 ## Supported Boards
 
 The boards and distributions that are currently supported;
