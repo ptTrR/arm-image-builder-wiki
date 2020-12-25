@@ -2,13 +2,14 @@
 title: Raspberry Pi Image Builder
 description: Image Builder for the Raspberry Pi
 published: 1
-date: 2020-12-25T03:01:46.770Z
+date: 2020-12-25T03:15:21.480Z
 tags: 
 editor: markdown
 dateCreated: 2020-12-21T09:11:37.991Z
 ---
 
-![rpi-img-builder(2).png](/rpi-img-builder(2).png){.align-center}## Supported Boards
+![rpi-img-builder(2).png](/rpi-img-builder(2).png){.align-center}
+## Supported Boards
 
 The boards and distributions that are currently supported;
 * Raspberry Pi 4B (bcm2711) | Debian, Devuan and Ubuntu
