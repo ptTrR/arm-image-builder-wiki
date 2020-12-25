@@ -2,7 +2,7 @@
 title: Helper for easily using Docker for building
 description: 
 published: 1
-date: 2020-12-25T03:17:44.589Z
+date: 2020-12-25T17:14:02.556Z
 tags: 
 editor: markdown
 dateCreated: 2020-12-22T08:20:39.694Z
@@ -25,7 +25,7 @@ read the [README](https://github.com/ptTrR/arm-img-builder-docker/blob/main/READ
 ```ssh
 All docker files are created on the fly depending on your choices 'make cross' or 'make native'.
 At the end of execution you should then find yourself inside the container, at which point you
-will need to run 'make setup'.
+will need to run 'make pull'.
 
 From that point on, each builder "rpi-img-builder / debian-image-builder" function as they would
 outside the container, minus the need for installing dependencies.
