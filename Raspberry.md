@@ -2,7 +2,7 @@
 title: Raspberry Pi Image Builder
 description: Image Builder for the Raspberry Pi
 published: 1
-date: 2020-12-25T16:38:00.740Z
+date: 2020-12-25T19:09:19.903Z
 tags: 
 editor: markdown
 dateCreated: 2020-12-21T09:11:37.991Z
@@ -86,10 +86,10 @@ Menuconfig:     # 1 to run kernel menuconfig
 Crosscompile:   # 1 to cross compile | 0 to native compile
 
 Distributions
-Release:				# Supported: buster, beowulf, 20.04.1 and 20.10
-Debian:				 # 1 to select (buster/unstable)
-Devuan:				 # 1 to select (beowulf/testing)
-Ubuntu:				 # 1 to select (20.04.1, 20.10)
+Release:        # Supported: buster, beowulf, 20.04.1 and 20.10
+Debian:				 # 1 to select (buster/bullseye/testing/unstable/sid)
+Devuan:		     # 1 to select (beowulf/testing/unstable/ceres)
+Ubuntu:		     # 1 to select (20.04.1/20.10)
 
 Wireless
 rtl88XXau:      # 1 to add Realtek 8812AU/14AU/21AU wireless support
