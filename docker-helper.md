@@ -2,8 +2,8 @@
 title: Helper for easily using Docker for building
 description: 
 published: 1
-date: 2020-12-28T13:06:07.657Z
-tags: 
+date: 2020-12-28T13:47:14.675Z
+tags: docker-addon, docker-helper, helper
 editor: markdown
 dateCreated: 2020-12-22T08:20:39.694Z
 ---
