@@ -2,8 +2,8 @@
 title: Freqeuently Asked Question
 description: 
 published: 1
-date: 2020-12-28T13:03:08.053Z
-tags: 
+date: 2020-12-28T13:11:16.202Z
+tags: help, faq, questions
 editor: markdown
 dateCreated: 2020-12-24T05:08:25.133Z
 ---
