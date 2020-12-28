@@ -2,20 +2,20 @@
 title: Downloading & Usage of prebuilt Images
 description: 
 published: 1
-date: 2020-12-15T19:34:05.440Z
+date: 2020-12-28T13:41:14.216Z
 tags: 
-editor: undefined
-dateCreated: 2020-12-05T21:56:04.097Z
+editor: markdown
+dateCreated: 2020-12-21T09:11:26.659Z
 ---
 
-## Downloading Images	
+## Downloading Images
 
-**We are uploading our prebuilt Images in a cloud where its possible to download them easily.** 
+**Official and verified images can be downloaded from the Releases section of the github.**
+https://github.com/pyavitz/rpi-img-builder/releases
 
-**You can download them from the following link:**
+**Other images may also be found at the following location.**
 https://files.arm-image-builder.xyz
-
-**Important: Not every image may work.**
+**Important: Not every image is verified and nor may work**
 
 ## Usage after flashing
 
