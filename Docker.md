@@ -2,7 +2,7 @@
 title: Docker instructions
 description: 
 published: 1
-date: 2020-12-25T04:03:19.326Z
+date: 2020-12-28T12:47:51.567Z
 tags: 
 editor: markdown
 dateCreated: 2020-12-21T09:11:20.474Z
@@ -47,6 +47,14 @@ The official instruction for installing docker-compose on arm devices isnt worki
 You can follow this guide for the installation:
 https://dev.to/rohansawant/installing-docker-and-docker-compose-on-the-raspberry-pi-in-5-simple-steps-3mgl
 
+### Torubleshooting at docker
+If you got some problems at using for compiling the image you should install the following on your host system:
+
+```
+apt install qemu-user-static #debian/ubuntu
+
+yay -S qemu-user-static #arch and other distros
+```
 ## Usage
 
 ### Clone my repo
