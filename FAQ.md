@@ -2,7 +2,7 @@
 title: Freqeuently Asked Question
 description: 
 published: 1
-date: 2020-12-24T05:08:25.133Z
+date: 2020-12-28T13:03:08.053Z
 tags: 
 editor: markdown
 dateCreated: 2020-12-24T05:08:25.133Z
@@ -11,14 +11,15 @@ dateCreated: 2020-12-24T05:08:25.133Z
 # Why using the Builder 
 
 ## Easy Usage
-- If yoree mostly read rhe Wiki, most things are clearified,
-- Easy Crossbuilding on yor powerful host system, and also there are some prebuilt images withcih yiz cab zse
-- Many oerfirnabce Tweaks, USB Boot is wotking and the latest Kernel and these improveemetns automaticcly added
+- If youre most things are done autmaticly, 
+- Easy Crossbuilding on your powerfull host system, sothat the time is reduced much
+- Many improvments are done automaticly by the builder,just take a watch at our patches
+- Upgrading the Kernel and eeprom are done with the scripts we provide
 
 ## Using Docker
 
 We have created a Dockerimage which already instaled all dependecies for native and cross compiling compiling and also native comopolingl So there are only 
 
-### Ussing th Docker-Helper
+## Using the docker-helper
 
-the DockerNireem informationn aht tc
+The usage of the "docker-helper" will help you easily to exec into the container and the its mostly done within some commands. 
