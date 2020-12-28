@@ -2,8 +2,8 @@
 title: Raspberry Pi Image Builder
 description: Image Builder for the Raspberry Pi
 published: 1
-date: 2020-12-25T19:09:19.903Z
-tags: 
+date: 2020-12-28T13:44:54.584Z
+tags: rpi-image-builder, raspberry, image, buiider
 editor: markdown
 dateCreated: 2020-12-21T09:11:37.991Z
 ---
