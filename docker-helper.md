@@ -2,7 +2,7 @@
 title: Helper for easily using Docker for building
 description: 
 published: 1
-date: 2020-12-25T17:14:02.556Z
+date: 2020-12-28T13:06:07.657Z
 tags: 
 editor: markdown
 dateCreated: 2020-12-22T08:20:39.694Z
@@ -12,7 +12,7 @@ dateCreated: 2020-12-22T08:20:39.694Z
 
 ***All docker work done by:*** https://github.com/ptTrR/arm-img-builder-docker
 
-### Builders:
+### Builders
 * https://github.com/pyavitz/rpi-img-builder
 * https://github.com/pyavitz/debian-image-builder
 
