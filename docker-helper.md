@@ -2,17 +2,17 @@
 title: Helper for easily using Docker for building
 description: 
 published: 1
-date: 2020-12-28T13:47:14.675Z
+date: 2020-12-29T04:39:42.207Z
 tags: docker-addon, docker-helper, helper
 editor: markdown
 dateCreated: 2020-12-22T08:20:39.694Z
 ---
 
-## Addon for the Arm Image Builder Docker
+# Addon for the Arm Image Builder Docker
 
 ***All docker work done by:*** https://github.com/ptTrR/arm-img-builder-docker
 
-### Builders
+## Builders
 * https://github.com/pyavitz/rpi-img-builder
 * https://github.com/pyavitz/debian-image-builder
 
@@ -21,7 +21,7 @@ read the [README](https://github.com/ptTrR/arm-img-builder-docker/blob/main/READ
 
 ---
 
-### Basics
+## Basics
 ```ssh
 All docker files are created on the fly depending on your choices 'make cross' or 'make native'.
 At the end of execution you should then find yourself inside the container, at which point you
@@ -33,7 +33,7 @@ outside the container, minus the need for installing dependencies.
 For each builder simply following the directions in the README.md or run ‘make help’.
 ```
 
-### Makefile
+## Makefile
 ```sh
 DOCKER ARM IMAGE BUILDER
 
@@ -58,7 +58,7 @@ For details consult the README.md
 ```sh
 The main purpose of the Makefile is to remove the need for manual setup
 ```
-### External setup
+## External setup
 ```sh
 If compiling native or lacking internal space, I suggest setting up an
 external hard drive.
@@ -71,7 +71,7 @@ sudo nano /etc/docker/daemon.json
 sudo systemctl restart docker
 ```
 
-### Moving files
+## Moving files to the host
 ```sh
 Example:
 mv rpi-3-debian-buster-5.10.1-v8-2020-12-21.img.xz /images/
