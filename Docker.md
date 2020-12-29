@@ -2,7 +2,7 @@
 title: Docker instructions
 description: 
 published: 1
-date: 2020-12-29T04:30:26.294Z
+date: 2020-12-29T04:32:05.150Z
 tags: 
 editor: markdown
 dateCreated: 2020-12-21T09:11:20.474Z
@@ -28,7 +28,7 @@ We will provide two different tags:
 > latest --> for cross compiling on amd64 or arm64
 > native --> for native compiling on arm64
 
-## Installing docker and docker-compose
+# Installation of docker and docker-compose
 
 Docker and docker-compose are for following operating systems available:
 
@@ -47,7 +47,7 @@ The official instruction for installing docker-compose on arm devices isnt worki
 You can follow this guide for the installation:
 https://dev.to/rohansawant/installing-docker-and-docker-compose-on-the-raspberry-pi-in-5-simple-steps-3mgl
 
-## Torubleshooting at docker
+# Torubleshooting at docker
 If you got some problems at using for compiling the image you should install the following on your host system:
 
 ```
@@ -55,9 +55,9 @@ apt install qemu-user-static #debian/ubuntu
 
 yay -S qemu-user-static #arch and other distros
 ```
-## Usage
+# Usage
 
-### Clone my repo
+## Clone my repo
 
 ```
 git clone https://github.com/ptTrR/arm-img-builder-docker
@@ -81,12 +81,12 @@ services:
       - /dev:/dev
       - ./:/images
 ```
-### Change the image tag to your needs. 
+## Change the image tag to your needs. 
 
 **:latest is for cross compiling on your amd64 and arm64
 :native is for native compiling on arm64**
 
-### Pulling and start the container
+## Pulling and start the container
 
 ```
 docker-compose pull && docker-compose up -d
@@ -95,18 +95,18 @@ If your container is successfully started you have to exec into it:
 ```
 docker exec -it arm-img-builder bash
 ```
-### Docker-Helper
+## Docker-Helper
 
 We also created a "docker-helper" which is aimed for guys which not using docker that often or never used it. 
 Just check this link:
 https://wiki.arm-image-builder.xyz/en/docker-helper
 
-### Supported Builder
+## Supported Builder
 
 * [rpi-img-builder](https://github.com/pyavitz/rpi-img-builder) is located at /build/rpi-img-builder
 * [debian-image-builder](https://github.com/pyavitz/debian-image-builder) is located at /build/debian-img-builder
 
-### Usage inside the container
+## Usage inside the container
 
 Just run in the /build dir following commands:
 
@@ -128,9 +128,9 @@ mv *.img.xz /images
 
 Then you will find the image where you started the docker-compose. 
 
-## Maintenance and Troubleshooting
+# Maintenance and Troubleshooting
 
-### Cleanup
+## Cleanup
 
 For clearing up your directory and built cache in the container you can use the following commands:
 
@@ -139,12 +139,12 @@ make cleanup
 make purge
 make purge-all
 ```
-### Clearing the complete docker system
+## Clearing the complete docker system
 
 1. Stop your running container with `docker stop arm-img-builder` 
 2. Then run `docker system prune -a --volumes`
 
-## Support
+# Support
 
 For more information watch at our [Wiki](https://wiki.arm-image-builder.xyz/) or [GitHub](https://github.com/pyavitz).
 
