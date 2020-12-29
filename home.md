@@ -2,18 +2,11 @@
 title: Home
 description: 
 published: 1
-date: 2020-12-29T04:28:43.083Z
+date: 2020-12-29T14:02:13.117Z
 tags: 
 editor: markdown
 dateCreated: 2020-12-21T08:57:34.603Z
 ---
-
-# Overview 
-
-The builder improves your image, we are applying patches for a better performance, stability, ... .
-Also, the builder is actively maintained, you don't need to be afraid that it is just a "short-project".
-
-Also, you have the possibility to create your own image, how you like it. We are supporting several operating systems and thir versions.
 
 # Supported Boards and distributions
 
@@ -25,10 +18,10 @@ Also, you have the possibility to create your own image, how you like it. We are
 
 ## Debian Image Builder
 
-* **Allwinner:**  # *NanoPi NEO Plus2, Orange Pi R1, Pine A64+ and Tritium*
-* **Amlogic:**    # *Le Potato, Odroid C4 and Odroid N2/Plus*
-* **Broadcom:**		# *Raspberry Pi 4B (Using U-Boot)*
-* **Rockchip:**   # *NanoPC-T4, Renegade and Rock64*
+* **Allwinner:** *NanoPi NEO Plus2, Orange Pi R1, Pine A64+ and Tritium*
+* **Amlogic:** *Le Potato, Odroid C4 and Odroid N2/Plus*
+* **Broadcom:**	*Raspberry Pi 4B (Using U-Boot)*
+* **Rockchip:** *NanoPC-T4, Renegade and Rock64*
 
 # Basics
 
