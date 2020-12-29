@@ -2,13 +2,13 @@
 title: Downloading & Usage of prebuilt Images
 description: 
 published: 1
-date: 2020-12-28T13:41:14.216Z
+date: 2020-12-29T04:41:10.634Z
 tags: 
 editor: markdown
 dateCreated: 2020-12-21T09:11:26.659Z
 ---
 
-## Downloading Images
+# Downloading prebuilt Images
 
 **Official and verified images can be downloaded from the Releases section of the github.**
 https://github.com/pyavitz/rpi-img-builder/releases
@@ -17,10 +17,12 @@ https://github.com/pyavitz/rpi-img-builder/releases
 https://files.arm-image-builder.xyz
 **Important: Not every image is verified and nor may work**
 
-## Usage after flashing
+# Usage after flashing
 
-### Debian / Devuan
-#### /boot/rename_to_credentials.txt
+## Debian / Devuan
+
+### /boot/rename_to_credentials.txt
+
 ```sh
 Rename file to credentials.txt and input your wifi information.
 
@@ -45,8 +47,10 @@ files, whilst leaving rename_to_credentials.txt untouched.
 /etc/opt/wpa_supplicant.manual
 ```
 
-### Ubuntu
-#### /boot/rename_to_credentials.txt
+## Ubuntu
+
+### /boot/rename_to_credentials.txt
+
 ```sh
 Rename file to credentials.txt and input your wifi information.
 
@@ -62,8 +66,9 @@ DNS=""				# Your preferred dns
 
 For headless use: ssh user@ipaddress
 ```
-## Usage on the device
-### Using deb-eeprom
+# Usage on the device
+
+## Using deb-eeprom
 
 ```sh
 Raspberry Pi 4B EEPROM Helper Script
@@ -78,7 +83,7 @@ Note:
 Upon install please run 'deb-eeprom -u' before using this script.
 ```
 
-### Using fetch
+## Using fetch
 ```sh
 Fetch, Linux kernel installer for the Raspberry Pi Image Builder
 Usage: fetch -opt
@@ -91,7 +96,7 @@ Usage: fetch -opt
 
 fetch -h will list available options and kernel revisions
 ```
-### Simple wifi helper (Debian / Devuan)
+## Simple wifi helper (Debian / Devuan)
 ```sh
 swh -h
 
@@ -102,7 +107,7 @@ swh -h
    -W       Edit wpa supplicant
    -I       Edit interfaces
 ```
-### CPU frequency scaling
+## CPU frequency scaling
 ```sh
 Usage: governor -opt
 
