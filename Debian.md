@@ -2,13 +2,15 @@
 title: Debian Image Builder
 description: 
 published: 1
-date: 2020-12-21T19:02:28.202Z
+date: 2020-12-29T04:52:24.637Z
 tags: 
 editor: markdown
 dateCreated: 2020-12-21T09:11:13.668Z
 ---
 
-## Supported boards
+<img src="https://socialify.git.ci/pyavitz/debian-image-builder/image?description=1&font=Rokkitt&forks=1&issues=1&logo=https%3A%2F%2Fwww.debian.org%2Flogos%2Fopenlogo-nd.svg&owner=1&pattern=Charlie%20Brown&pulls=1&stargazers=1&theme=Dark" alt="debian-image-builder" width="640" height="320" />
+
+# Supported boards
 
 
 - Allwinner:      # NanoPi NEO Plus2, Orange Pi R1, Pine A64+ and Tritium
@@ -16,7 +18,7 @@ dateCreated: 2020-12-21T09:11:13.668Z
 - Broadcom:       # Raspberry Pi 4B
 - Rockchip:       # NanoPC-T4, Renegade and Rock64
 
-## Dependencies for Debian Buster AMD64/x86_64 cross compile
+# Dependencies for Debian Buster AMD64/x86_64 cross compile
 
 ```sh
 sudo apt install build-essential bison bc git dialog patch dosfstools zip unzip qemu parted \ 
@@ -28,23 +30,23 @@ sudo apt install build-essential bison bc git dialog patch dosfstools zip unzip 
 Orange Pi R1 - sudo apt install -y crossbuild-essential-armhf
 ```
 
-## Instructions
+# Instructions
 
-### Install dependencies
+## Install dependencies
 
 ```sh
 make ccompile   # Cross compile
 make ncompile   # Native compile
 ```
 
-### Menu interface
+## Menu interface
 
 ```sh
 make config     # Create user data file
 make menu       # Open menu interface
 make dialogrc   # Set builder theme (optional)
 ```
-### Config Menu
+## Config Menu
 
 ```sh
 Name:					 # Whats your name?
@@ -62,26 +64,26 @@ rtl88XXau:      # 1 to add Realtek 8812AU/14AU/21AU wireless support
 rtl88XXbu:      # 1 to add Realtek 88X2BU wireless support
 rtl88XXcu:      # 1 to add Realtek 8811CU/21CU wireless support
 ```
-### User defconfig
+## User defconfig
 ```sh
 nano userdata.txt
 # place config in defconfig directory
 custom_defconfig=1
 MYCONFIG="nameofyour_defconfig"
 ```
-### Compression
+## Compression
 ```sh
 nano userdata.txt
 # change from 0 to 1
 auto=1        # compresses to img.xz
 ```
-### Odroid N2/Plus eMMC
+## Odroid N2/Plus eMMC
 ```sh
 nano userdata.txt
 # change from 0 to 1
 emmc=1
 ```
-### Miscellaneous
+## Miscellaneous
 
 ```sh
 make cleanup    # Clean up image errors
@@ -89,9 +91,9 @@ make purge      # Remove sources directory
 make purge-all  # Remove sources and output directory
 ```
 
-## Usage
+# Usage
 
-### Write to eMMC
+## Write to eMMC
 
 ```sh
 Supported: Le Potato, Odroid C4, Odroid N2/Plus and NanoPi NEO Plus2
@@ -100,7 +102,7 @@ Supported: Le Potato, Odroid C4, Odroid N2/Plus and NanoPi NEO Plus2
 3. Execute: sudo write2mmc
 ```
 
-### Deb EEPROM ([usb_storage.quirks](https://github.com/pyavitz/rpi-img-builder/issues/17))
+## Deb EEPROM ([usb_storage.quirks](https://github.com/pyavitz/rpi-img-builder/issues/17))
 
 ```
 Raspberry Pi 4B EEPROM Helper Script
@@ -114,7 +116,7 @@ Usage: deb-eeprom -opt
 Note:
 Upon install please run 'deb-eeprom -u' before using this script.
 ```
-### Simple wifi helper
+## Simple wifi helper
 ```
 swh -h
 
@@ -125,7 +127,7 @@ swh -h
    -W       Edit wpa supplicant
    -I       Edit interfaces
 ```
-### CPU frequency scaling
+## CPU frequency scaling
 ```
 governor -h
 
