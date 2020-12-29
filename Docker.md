@@ -2,7 +2,7 @@
 title: Docker instructions
 description: 
 published: 1
-date: 2020-12-28T12:47:51.567Z
+date: 2020-12-29T04:30:26.294Z
 tags: 
 editor: markdown
 dateCreated: 2020-12-21T09:11:20.474Z
@@ -10,7 +10,7 @@ dateCreated: 2020-12-21T09:11:20.474Z
 
 <img src="https://socialify.git.ci/ptTrR/arm-img-builder-docker/image?description=1&descriptionEditable=Build%20customized%20arm%20images%20with%20docker&font=Bitter&forks=1&issues=1&logo=https%3A%2F%2Fwww.docker.com%2Fsites%2Fdefault%2Ffiles%2Fd8%2F2019-07%2Fvertical-logo-monochromatic.png&owner=1&pattern=Charlie%20Brown&pulls=1&stargazers=1&theme=Dark" alt="arm-img-builder-docker" width="640" height="320" />
 
-## Docker arm image builder
+# Docker arm image builder
 
 For easily build your image we have created a docker image. The only thing you need to install is docker and docker-compose.
 You have the possibility to build the docker image yourself or download the image from docker hub.
@@ -28,7 +28,7 @@ We will provide two different tags:
 > latest --> for cross compiling on amd64 or arm64
 > native --> for native compiling on arm64
 
-### Installing docker and docker-compose
+## Installing docker and docker-compose
 
 Docker and docker-compose are for following operating systems available:
 
@@ -40,14 +40,14 @@ You will find how to install docker and docker-compose for your operating system
 
 https://docs.docker.com/get-docker/
 
-### Install docker at raspberry or other arm devices
+## Install docker at raspberry or other arm devices
 
 The official instruction for installing docker-compose on arm devices isnt working sometimes. 
 
 You can follow this guide for the installation:
 https://dev.to/rohansawant/installing-docker-and-docker-compose-on-the-raspberry-pi-in-5-simple-steps-3mgl
 
-### Torubleshooting at docker
+## Torubleshooting at docker
 If you got some problems at using for compiling the image you should install the following on your host system:
 
 ```
@@ -81,7 +81,7 @@ services:
       - /dev:/dev
       - ./:/images
 ```
-#### Change the image tag to your needs. 
+### Change the image tag to your needs. 
 
 **:latest is for cross compiling on your amd64 and arm64
 :native is for native compiling on arm64**
@@ -106,7 +106,7 @@ https://wiki.arm-image-builder.xyz/en/docker-helper
 * [rpi-img-builder](https://github.com/pyavitz/rpi-img-builder) is located at /build/rpi-img-builder
 * [debian-image-builder](https://github.com/pyavitz/debian-image-builder) is located at /build/debian-img-builder
 
-## Usage inside the container
+### Usage inside the container
 
 Just run in the /build dir following commands:
 
