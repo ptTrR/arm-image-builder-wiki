@@ -2,8 +2,8 @@
 title: Freqeuently Asked Question
 description: 
 published: 1
-date: 2020-12-28T13:11:16.202Z
-tags: help, faq, questions
+date: 2020-12-29T03:52:00.846Z
+tags: faq, help, questions
 editor: markdown
 dateCreated: 2020-12-24T05:08:25.133Z
 ---
@@ -16,7 +16,7 @@ dateCreated: 2020-12-24T05:08:25.133Z
 - Many improvments are done automaticly by the builder,just take a watch at our patches
 - Upgrading the Kernel and eeprom are done with the scripts we provide
 
-## Using Docker
+# Using Docker
 
 We have created a Dockerimage which already instaled all dependecies for native and cross compiling compiling and also native comopolingl So there are only 
 
