@@ -2,7 +2,7 @@
 title: Raspberry Pi Image Builder
 description: Image Builder for the Raspberry Pi
 published: 1
-date: 2020-12-31T05:21:45.613Z
+date: 2020-12-31T05:30:05.333Z
 tags: buiider, image, raspberry, rpi-image-builder
 editor: markdown
 dateCreated: 2020-12-21T09:11:37.991Z
@@ -33,16 +33,16 @@ Alternatively, you can run the command `make ccompile` in this directory.
 
 ---
 
-## Instructions
+# Instructions
 
-### Install dependencies
+## Install dependencies
 
 ```sh
 make ccompile	# Install all dependencies
 make ncompile	# Install native dependencies
 ```
 
-### Menu interface
+## Menu interface
 
 ```sh
 make config     # Create user data file (Foundation Kernel)
@@ -51,7 +51,7 @@ make menu       # Open menu interface
 make dialogrc   # Set builder theme (optional)
 ```
 
-### Config Menu
+## Config Menu
 
 ```sh
 Username:       # Your username
@@ -74,7 +74,7 @@ rtl88XXbu:      # 1 to add Realtek 88X2BU wireless support
 rtl88XXcu:      # 1 to add Realtek 8811CU/21CU wireless support
 ```
 
-### Mainline Config Menu (RPi4B ONLY)
+## Mainline Config Menu (RPi4B ONLY)
 
 ```sh
 Username:       # Your username
@@ -97,12 +97,9 @@ rtl88XXau:      # 1 to add Realtek 8812AU/14AU/21AU wireless support
 rtl88XXbu:      # 1 to add Realtek 88X2BU wireless support
 rtl88XXcu:      # 1 to add Realtek 8811CU/21CU wireless support
 ```
-### Furthermore
 
-If interested in building a Raspberry Pi 4B image that uses mainline u-boot and linux
-use our other [builder](https://github.com/pyavitz/debian-image-builder).
 
-### User defconfig
+## User defconfig
 
 ```sh
 nano userdata.txt
@@ -111,16 +108,20 @@ custom_defconfig=1
 MYCONFIG="nameofyour_defconfig"
 ```
 
-### User patches
+## User patches
 
 ```sh
 Patches "-p1" placed in patches/userpatches are applied during
 compilation. This works for both Foundation and Mainline kernels.
 ```
+## Furthermore
 
-## Command list
+If interested in building a Raspberry Pi 4B image that uses mainline u-boot and linux
+use our other [builder](https://github.com/pyavitz/debian-image-builder).
 
-### Raspberry Pi 4B
+# Command list
+
+## Raspberry Pi 4B
 
 ```sh
 # AARCH64
@@ -130,7 +131,7 @@ make mainline	# Mainline
 make image
 ```
 
-### Raspberry Pi 3A/B/+
+## Raspberry Pi 3A/B/+
 
 ```sh
 # AARCH64
@@ -139,7 +140,7 @@ make rpi3-kernel
 make rpi3-image
 ```
 
-### Raspberry Pi 0/0W/B/+
+## Raspberry Pi 0/0W/B/+
 
 ```sh
 # ARMv6l
@@ -148,14 +149,14 @@ make rpi-kernel
 make rpi-image
 ```
 
-### Root Filesystems
+## Root Filesystems
 
 ```sh
 make rootfs   # arm64
 make rootfsv6 # armel
 ```
 
-### Miscellaneous
+## Miscellaneous
 
 ```sh
 make cleanup    					# Clean up image errors
@@ -165,13 +166,14 @@ make commands   					# List legacy commands
 make helper     					# Download a binary Linux package
 ```
 
-## Usage
+# Usage
 
----
 
-### Debian/Devuan
+## Debian/Devuan
 
-#### /boot/rename_to_credentials.txt
+___
+
+### /boot/rename_to_credentials.txt
 
 
 ```sh
@@ -202,8 +204,8 @@ files, whilst leaving rename_to_credentials.txt untouched.
 /etc/opt/wpa_supplicant.manual
 ```
 
-### Ubuntu
-#### /boot/rename_to_credentials.txt
+## Ubuntu
+### /boot/rename_to_credentials.txt
 
 ```sh
 Rename file to credentials.txt and input your wifi information.
@@ -224,8 +226,9 @@ BRANDING="Raspberry Pi"		  # Set ASCII text banner
 
 For headless use: ssh user@ipaddress
 ```
+# Usage on the Raspberry
 
-#### Using deb-eeprom and [usb_storage.quirks](https://github.com/pyavitz/rpi-img-builder/issues/17)
+## Using deb-eeprom and [usb_storage.quirks](https://github.com/pyavitz/rpi-img-builder/issues/17)
 
 ```sh
 Raspberry Pi 4B EEPROM Helper Script
@@ -240,7 +243,7 @@ Note:
 Upon install please run 'deb-eeprom -u' before using this script.
 ```
 
-#### Using fetch
+## Using fetch (Kernel-Manager)
 
 ```sh
 Fetch, Linux kernel installer for the Raspberry Pi Image Builder
@@ -254,7 +257,7 @@ Usage: fetch -opt
 
 fetch -h will list available options and kernel revisions
 ```
-#### Simple wifi helper (Debian / Devuan)
+## Simple wifi helper (Debian / Devuan)
 ```sh
 swh -h
 
@@ -265,7 +268,7 @@ swh -h
    -W       Edit wpa supplicant
    -I       Edit interfaces
 ```
-#### CPU frequency scaling
+## CPU frequency scaling
 ```sh
 Usage: governor -opt
 
@@ -281,6 +284,6 @@ A service runs 'governor -r' during boot.
 
 ---
 
-### Support
+# Support
 
 Should you come across any bugs, feel free to either open an issue on GitHub or talk with us directly by joining our channel on Freenode; [`#debianarm-port`](irc://irc.freenode.net/#debianarm-port)
