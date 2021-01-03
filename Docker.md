@@ -2,7 +2,7 @@
 title: Docker instructions
 description: 
 published: 1
-date: 2021-01-03T00:29:50.154Z
+date: 2021-01-03T00:30:59.585Z
 tags: 
 editor: markdown
 dateCreated: 2020-12-21T09:11:20.474Z
@@ -108,7 +108,6 @@ Just run in the /build directory following commands, they're should be automatic
 ```
 make pull 	# Pulling latest updates from the builder
 make update # Updating scripts and the makefile
-make setup 	# The builder makefiles will be converted for docker-usage
 ```
 Then enter in your wanted builder directory and follow the commands which you will find here:
 
