@@ -2,7 +2,7 @@
 title: Docker instructions
 description: 
 published: 1
-date: 2021-01-03T00:30:59.585Z
+date: 2021-01-03T03:42:54.294Z
 tags: 
 editor: markdown
 dateCreated: 2020-12-21T09:11:20.474Z
