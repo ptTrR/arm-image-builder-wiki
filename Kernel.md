@@ -2,7 +2,7 @@
 title: Instruction
 description: 
 published: 1
-date: 2021-01-03T03:52:46.808Z
+date: 2021-01-06T05:02:51.043Z
 tags: 
 editor: undefined
 dateCreated: 2020-12-21T09:11:32.322Z
