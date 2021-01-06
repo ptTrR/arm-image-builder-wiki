@@ -2,9 +2,9 @@
 title: Raspberry Pi Image Builder
 description: Image Builder for the Raspberry Pi
 published: 1
-date: 2021-01-03T03:52:51.504Z
-tags: 
-editor: undefined
+date: 2021-01-06T04:50:11.755Z
+tags: buiider, image, raspberry, rpi-image-builder
+editor: markdown
 dateCreated: 2020-12-21T09:11:37.991Z
 ---
 
@@ -31,9 +31,10 @@ This has been tested on an AMD64/x86_64 system running on [Debian Buster](https:
 
 Alternatively, you can run the command `make ccompile` in this directory.
 
----
-## Building with Docker
-** Just take a watch at our [Docker Instructions](https://wiki.arm-image-builder.xyz/en/Docker) ** 
+
+## Docker
+
+To build using [Docker](https://www.docker.com/), follow the instructions on the [Wiki](https://wiki.arm-image-builder.xyz/Docker) or use the other [builder](https://github.com/pyavitz/arm-img-builder).
 
 # Instructions
 
@@ -161,11 +162,12 @@ make rootfsv6 # armel
 ## Miscellaneous
 
 ```sh
-make cleanup    					# Clean up image errors
-make purge      					# Remove source directory
-make purge-all  					# Remove source and output directory
-make commands   					# List legacy commands
-make helper     					# Download a binary Linux package
+make cleanup    # Clean up image errors
+make purge      # Remove source directory
+make purge-all  # Remove source and output directory
+make commands   # List legacy commands
+make helper     # Download a binary Linux package
+make check      # Shows latest revision of selected branch
 ```
 
 # Usage
@@ -230,7 +232,7 @@ For headless use: ssh user@ipaddress
 ```
 # Usage on the Raspberry
 
-## Using deb-eeprom and [usb_storage.quirks](https://github.com/pyavitz/rpi-img-builder/issues/17)
+## Using deb-eeprom ([usb_storage.quirks](https://github.com/pyavitz/rpi-img-builder/issues/17))
 
 ```sh
 Raspberry Pi 4B EEPROM Helper Script
@@ -254,6 +256,8 @@ Usage: fetch -opt
    -1       Linux 5.4.y LTS
    -2       Linux Stable Branch
    -3       Linux Mainline Branch
+   -4       Update Boot Binaries
+
    -u       Update Fetch
    -s       Not working? Setup Fetch
 
