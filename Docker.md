@@ -2,9 +2,9 @@
 title: Docker instructions
 description: 
 published: 1
-date: 2021-01-06T09:39:35.129Z
+date: 2021-01-06T12:46:50.888Z
 tags: 
-editor: undefined
+editor: markdown
 dateCreated: 2020-12-21T09:11:20.474Z
 ---
 
@@ -51,9 +51,10 @@ https://dev.to/rohansawant/installing-docker-and-docker-compose-on-the-raspberry
 If you got some problems at using for compiling the image you should install the following on your host system:
 
 ```
-apt install qemu-user-static #debian/ubuntu based distros
-
-yay -S qemu aarch64-linux-gnu-gcc qemu-arch-extra #arch based distros
+sudo apt install qemu-user-static #debian/ubuntu based distros
+sudo pacman -S qemu aarch64-linux-gnu-gcc qemu-arch-extra #arch based distros
+Also run this docker-command:
+docker run --rm --privileged multiarch/qemu-user-static --reset -p yes
 ```
 # Usage
 
