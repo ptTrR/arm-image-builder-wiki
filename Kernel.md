@@ -2,10 +2,10 @@
 title: Instruction
 description: 
 published: 1
-date: 2020-12-02T19:10:56.793Z
+date: 2021-01-03T03:52:46.808Z
 tags: 
 editor: undefined
-dateCreated: 2020-12-02T16:52:48.438Z
+dateCreated: 2020-12-21T09:11:32.322Z
 ---
 
 ## Linux Kernel for Debian, Devuan and Ubuntu
