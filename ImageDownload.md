@@ -2,9 +2,9 @@
 title: prebuilt Images
 description: 
 published: 1
-date: 2021-01-06T05:02:46.945Z
+date: 2021-01-14T05:23:10.219Z
 tags: 
-editor: undefined
+editor: markdown
 dateCreated: 2020-12-29T20:13:34.502Z
 ---
 
@@ -14,7 +14,7 @@ dateCreated: 2020-12-29T20:13:34.502Z
 https://github.com/pyavitz/rpi-img-builder/releases
 
 **Other images may also be found at the following location.**
-https://files.arm-image-builder.xyz
+https://images.arm-image-builder.xyz/public/images
 **Important: Not every image is verified and nor may work**
 
 # Usage after flashing
