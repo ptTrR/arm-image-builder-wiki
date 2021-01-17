@@ -2,7 +2,7 @@
 title: Docker instructions
 description: 
 published: 1
-date: 2021-01-17T02:10:10.195Z
+date: 2021-01-17T19:15:47.828Z
 tags: 
 editor: markdown
 dateCreated: 2020-12-21T09:11:20.474Z
@@ -26,7 +26,7 @@ Here you find the image on the docker-hub:
 We will provide two different tags: 
 
 > latest --> for cross compiling on amd64 or arm64 (ubuntu as base-image)
-> debian --> for cross compiling on amd64 or arm64 (ubuntu as base-image)
+> debian --> for cross compiling on amd64 or arm64 (debuab as base-image)
 > native --> for native compiling on arm64				 (ubuntu as base-image)	
 
 # Installation of docker and docker-compose
