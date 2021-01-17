@@ -2,7 +2,7 @@
 title: Docker instructions
 description: 
 published: 1
-date: 2021-01-06T12:46:50.888Z
+date: 2021-01-17T02:07:45.432Z
 tags: 
 editor: markdown
 dateCreated: 2020-12-21T09:11:20.474Z
@@ -25,8 +25,9 @@ Here you find the image on the docker-hub:
 
 We will provide two different tags: 
 
-> latest --> for cross compiling on amd64 or arm64
-> native --> for native compiling on arm64
+> latest --> for cross compiling on amd64 or arm64 (ubuntu as base-image)
+> debian --> for cross compiling on amd64 or arm64 (ubuntu as base-image)
+> native --> for native compiling on arm64				 (ubuntu as base-image)	
 
 # Installation of docker and docker-compose
 
@@ -53,6 +54,7 @@ If you got some problems at using for compiling the image you should install the
 ```
 sudo apt install qemu-user-static #debian/ubuntu based distros
 sudo pacman -S qemu aarch64-linux-gnu-gcc qemu-arch-extra #arch based distros
+
 Also run this docker-command:
 docker run --rm --privileged multiarch/qemu-user-static --reset -p yes
 ```
@@ -70,13 +72,13 @@ version: '3.6'
 services:
 
   arm-img-builder:
-  #  build: .  #uncomment for building 
+#    build: .  #uncomment for building 
     image: pttrr/arm-img-builder:latest 
-  #  image: pttrr/arm-img-builder:native #uncomment for native compiling
+#    image: pttrr/arm-img-builder:native #uncomment for native compiling
     privileged: true
     container_name: arm-img-builder
     tty: true
-    restart: always
+#    restart: always
     volumes:
       - /sys/fs/cgroup:/sys/fs/cgroup:ro
       - /dev:/dev
@@ -84,7 +86,7 @@ services:
 ```
 ## Change the image tag to your needs. 
 
-**:latest is for cross compiling on your amd64 and arm64
+**:latest ; :debian are for cross compiling on your amd64 and arm64
 :native is for native compiling on arm64**
 
 ## Pulling and start the container
