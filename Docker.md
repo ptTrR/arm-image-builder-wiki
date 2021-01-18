@@ -2,7 +2,7 @@
 title: Docker instructions
 description: 
 published: 1
-date: 2021-01-17T19:15:47.828Z
+date: 2021-01-18T18:16:49.808Z
 tags: 
 editor: markdown
 dateCreated: 2020-12-21T09:11:20.474Z
@@ -25,9 +25,9 @@ Here you find the image on the docker-hub:
 
 We will provide two different tags: 
 
-> latest --> for cross compiling on amd64 or arm64 (ubuntu as base-image)
-> debian --> for cross compiling on amd64 or arm64 (debuab as base-image)
-> native --> for native compiling on arm64				 (ubuntu as base-image)	
+> latest --> for cross compiling on amd64 or arm64 (debian as base-image)
+> ubuntu --> for cross compiling on amd64 or arm64 (ubuntu as base-image - gcc9 )
+> native --> for native compiling on arm64				 (debian as base-image)	
 
 # Installation of docker and docker-compose
 
@@ -53,7 +53,7 @@ If you got some problems at using for compiling the image you should install the
 
 ```
 sudo apt install qemu-user-static #debian/ubuntu based distros
-sudo pacman -S qemu aarch64-linux-gnu-gcc qemu-arch-extra #arch based distros
+sudo pacman -S qemu qemu-arch-extra #arch based distros
 
 Also run this docker-command:
 docker run --rm --privileged multiarch/qemu-user-static --reset -p yes
@@ -96,7 +96,7 @@ docker-compose pull && docker-compose up -d
 ```
 If your container is successfully started you have to exec into it:
 ```
-docker exec -it arm-img-builder bash
+docker exec -it arm-img-builder /bin/bash
 ```
 
 ## Supported Builder
