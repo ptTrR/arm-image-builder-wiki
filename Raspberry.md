@@ -2,9 +2,9 @@
 title: Raspberry Pi Image Builder
 description: Image Builder for the Raspberry Pi
 published: 1
-date: 2021-01-06T05:02:55.483Z
-tags: 
-editor: undefined
+date: 2021-01-18T04:04:13.288Z
+tags: buiider, image, raspberry, rpi-image-builder
+editor: markdown
 dateCreated: 2020-12-21T09:11:37.991Z
 ---
 
@@ -20,11 +20,12 @@ dateCreated: 2020-12-21T09:11:37.991Z
 
 In order to install the required dependencies, run the following command:
 
+
 ```
 sudo apt install build-essential bison bc git dialog patch dosfstools zip unzip qemu debootstrap \
                  qemu-user-static rsync kmod cpio flex libssl-dev libncurses5-dev parted fakeroot \
                  swig aria2 pv toilet figlet crossbuild-essential-arm64 crossbuild-essential-armel \
-                 distro-info-data lsb-release curl
+                 distro-info-data lsb-release xz-utils curl
 ```
 
 This has been tested on an AMD64/x86_64 system running on [Debian Buster](https://www.debian.org/releases/buster/debian-installer/).
@@ -55,7 +56,6 @@ make dialogrc   # Set builder theme (optional)
 ```
 
 ## Config Menu
-
 ```sh
 Username:       # Your username
 Password:       # Your password
@@ -66,18 +66,19 @@ Menuconfig:     # 1 to run kernel menuconfig
 Crosscompile:   # 1 to cross compile | 0 to native compile
 
 Distributions
-Release:        # Supported: buster, beowulf, 20.04.1 and 20.10
-Debian:				 # 1 to select (buster/bullseye/testing/unstable/sid)
-Devuan:		     # 1 to select (beowulf/testing/unstable/ceres)
-Ubuntu:		     # 1 to select (20.04.1/20.10)
+Release:	# Supported: buster, beowulf and 20.04.1
+Debian:		# 1 to select (buster/bullseye/testing/unstable/sid)
+Devuan:		# 1 to select (beowulf/testing/unstable/ceres)
+Ubuntu:		# 1 to select (20.04.1/20.10)
 
-Wireless
+Wireless        (aarch64)
 rtl88XXau:      # 1 to add Realtek 8812AU/14AU/21AU wireless support
 rtl88XXbu:      # 1 to add Realtek 88X2BU wireless support
 rtl88XXcu:      # 1 to add Realtek 8811CU/21CU wireless support
 ```
 
 ## Mainline Config Menu (RPi4B ONLY)
+
 
 ```sh
 Username:       # Your username
@@ -90,17 +91,16 @@ Menuconfig:     # 1 to run kernel menuconfig
 Crosscompile:   # 1 to cross compile | 0 to native compile
 
 Distributions
-Release:        # Supported: buster, beowulf, 20.04.1 and 20.10
-Debian:				 # 1 to select (buster/bullseye/testing/unstable/sid)
-Devuan:		     # 1 to select (beowulf/testing/unstable/ceres)
-Ubuntu:		     # 1 to select (20.04.1/20.10)
+Release:	# Supported: buster, beowulf and 20.04.1
+Debian:		# 1 to select (buster/bullseye/testing/unstable/sid)
+Devuan:		# 1 to select (beowulf/testing/unstable/ceres)
+Ubuntu:		# 1 to select (20.04.1/20.10)
 
-Wireless
+Wireless        (aarch64)
 rtl88XXau:      # 1 to add Realtek 8812AU/14AU/21AU wireless support
 rtl88XXbu:      # 1 to add Realtek 88X2BU wireless support
 rtl88XXcu:      # 1 to add Realtek 8811CU/21CU wireless support
 ```
-
 
 ## User defconfig
 
