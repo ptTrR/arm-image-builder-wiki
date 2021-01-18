@@ -2,7 +2,7 @@
 title: Docker-Helper
 description: 
 published: 1
-date: 2021-01-06T13:28:08.890Z
+date: 2021-01-18T18:17:42.187Z
 tags: 
 editor: markdown
 dateCreated: 2021-01-06T13:28:08.890Z
@@ -19,6 +19,17 @@ dateCreated: 2021-01-06T13:28:08.890Z
 The initial docker installation and setup still applies so I suggest you
 read the [README](https://github.com/ptTrR/arm-img-builder-docker/blob/main/README.md) before trying to use this.
 
+## Troubleshooting 
+
+If you got some problems at using for compiling the image you should install the following on your host system:
+
+```
+sudo apt install qemu-user-static #debian/ubuntu based distros
+sudo pacman -S qemu qemu-arch-extra #arch based distros
+
+Also run this docker-command:
+docker run --rm --privileged multiarch/qemu-user-static --reset -p yes
+```
 ---
 
 ## Basics
