@@ -2,7 +2,7 @@
 title: Docker instructions
 description: 
 published: 1
-date: 2021-01-18T18:16:49.808Z
+date: 2021-01-18T18:20:18.988Z
 tags: 
 editor: markdown
 dateCreated: 2020-12-21T09:11:20.474Z
@@ -102,6 +102,7 @@ docker exec -it arm-img-builder /bin/bash
 ## Supported Builder
 
 * [rpi-img-builder](https://github.com/pyavitz/rpi-img-builder) is located at /build/rpi-img-builder
+--> Also from the builder are automatically the "xfce-branch" and the "armhf-branch" included for building
 * [debian-image-builder](https://github.com/pyavitz/debian-image-builder) is located at /build/debian-img-builder
 
 ## Usage inside the container
