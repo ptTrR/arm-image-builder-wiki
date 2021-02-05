@@ -1,19 +1,19 @@
 ---
 title: Docker instructions
 description: 
-published: 1
-date: 2021-01-18T18:22:37.322Z
+published: true
+date: 2021-02-05T00:49:20.658Z
 tags: 
 editor: markdown
-dateCreated: 2020-12-21T09:11:20.474Z
+dateCreated: 2021-02-05T00:39:06.494Z
 ---
 
 <img src="https://socialify.git.ci/ptTrR/arm-img-builder-docker/image?description=1&descriptionEditable=Build%20customized%20arm%20images%20with%20docker&font=Bitter&forks=1&issues=1&logo=https%3A%2F%2Fwww.docker.com%2Fsites%2Fdefault%2Ffiles%2Fd8%2F2019-07%2Fvertical-logo-monochromatic.png&owner=1&pattern=Charlie%20Brown&pulls=1&stargazers=1&theme=Dark" alt="arm-img-builder-docker" width="640" height="320" />
 
-# Docker arm image builder
+## Docker arm image builder
 
 For easily build your image we have created a docker image. The only thing you need to install is docker and docker-compose.
-You have the possibility to build the docker image yourself or download the image from the docker hub.
+You have the possibility to build the docker image yourself or download the image from docker hub.
 The prebuilt docker images are available for the following architectures:
 
 * amd64
@@ -25,11 +25,10 @@ Here you find the image on the docker-hub:
 
 We will provide two different tags: 
 
-> latest --> for cross compiling on amd64 or arm64 (debian as base-image)
-> ubuntu --> for cross compiling on amd64 or arm64 (ubuntu as base-image - gcc9 )
-> native --> for native compiling on arm64				 (debian as base-image)	
+> latest --> for cross compiling on amd64 or arm64
+> native --> for native compiling on arm64
 
-# Installation of docker and docker-compose
+### Installing docker and docker-compose
 
 Docker and docker-compose are for following operating systems available:
 
@@ -41,26 +40,28 @@ You will find how to install docker and docker-compose for your operating system
 
 https://docs.docker.com/get-docker/
 
-## Install docker at raspberry or other arm devices
+### Install docker at raspberry or other arm devices
 
-The official instruction for installing docker-compose on arm devices isn't working sometimes. 
+The official instruction for installing docker-compose on arm devices isnt working sometimes. 
 
 You can follow this guide for the installation:
 https://dev.to/rohansawant/installing-docker-and-docker-compose-on-the-raspberry-pi-in-5-simple-steps-3mgl
 
-# Troubleshooting at docker
+### Torubleshooting at docker
 If you got some problems at using for compiling the image you should install the following on your host system:
 
 ```
-sudo apt install qemu-user-static #debian/ubuntu based distros
-sudo pacman -S qemu qemu-arch-extra #arch based distros
+sudo apt install qemu-user-static #debian/ubuntu
 
-Also run this docker-command:
+sudo pacman -S qemu aarch64-linux-gnu-gcc qemu-arch-extra #arch and other distros
+
+if there are still problems run the follwing command:
+
 docker run --rm --privileged multiarch/qemu-user-static --reset -p yes
 ```
-# Usage
+## Usage
 
-## Clone my repo
+### Clone my repo
 
 ```
 git clone https://github.com/ptTrR/arm-img-builder-docker
@@ -84,30 +85,34 @@ services:
       - /dev:/dev
       - ./:/images
 ```
-## Change the image tag to your needs. 
+#### Change the image tag to your needs. 
 
-**:latest ; :debian are for cross compiling on your amd64 and arm64
+**:latest is for cross compiling on your amd64 and arm64
 :native is for native compiling on arm64**
 
-## Pulling and start the container
+### Pulling and start the container
 
 ```
 docker-compose pull && docker-compose up -d
 ```
 If your container is successfully started you have to exec into it:
 ```
-docker exec -it arm-img-builder /bin/bash
+docker exec -it arm-img-builder bash
 ```
+### Docker-Helper
 
-## Supported Builder
+We also created a "docker-helper" which is aimed for guys which not using docker that often or never used it. 
+Just check this link:
+https://wiki.arm-image-builder.xyz/en/docker-helper
+
+### Supported Builder
 
 * [rpi-img-builder](https://github.com/pyavitz/rpi-img-builder) is located at /build/rpi-img-builder
---> Also from the builder are automatically the "xfce-branch" and the "armhf-branch" included for building
 * [debian-image-builder](https://github.com/pyavitz/debian-image-builder) is located at /build/debian-img-builder
 
 ## Usage inside the container
 
-Just run in the /build directory following commands, they're should be automatically done when entering the container, but for going sure:
+Just run in the /build dir following commands (mostly they should do the commands if enterying the container but for going sure):
 
 ```
 make pull 	# Pulling latest updates from the builder
@@ -119,22 +124,16 @@ Then enter in your wanted builder directory and follow the commands which you wi
 [debian-image-builder](https://wiki.arm-image-builder.xyz/en/Debian)
 
 ## Moving image to the host system
-When your image built, you just have to move your created image to the /image directory, for example:
+When your image built, you just have to move your to the /image directory, for example:
 ```
 mv *.img.xz /images
 ```
 
 Then you will find the image where you started the docker-compose. 
 
-## Docker-Helper
+## Maintenance and Troubleshooting
 
-We also created a "docker-helper" which is aimed for guys which not using docker that often or never used it. 
-Just check this link:
-https://wiki.arm-image-builder.xyz/en/docker-helper
-
-# Maintenance and Troubleshooting
-
-## Cleanup
+### Cleanup
 
 For clearing up your directory and built cache in the container you can use the following commands:
 
@@ -143,14 +142,12 @@ make cleanup
 make purge
 make purge-all
 ```
-## Clearing the complete docker system
+### Clearing the complete docker system
 
 1. Stop your running container with `docker stop arm-img-builder` 
 2. Then run `docker system prune -a --volumes`
 
-**Attention, this will remove every stopped container, images, volumes and cache. Be careful, if you are running other services with docker.**
-
-# Support
+## Support
 
 For more information watch at our [Wiki](https://wiki.arm-image-builder.xyz/) or [GitHub](https://github.com/pyavitz).
 
