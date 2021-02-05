@@ -1,25 +1,25 @@
 ---
 title: Raspberry Pi Image Builder
 description: Image Builder for the Raspberry Pi
-published: 1
-date: 2021-01-18T04:04:13.288Z
+published: true
+date: 2021-02-05T00:46:55.593Z
 tags: buiider, image, raspberry, rpi-image-builder
 editor: markdown
-dateCreated: 2020-12-21T09:11:37.991Z
+dateCreated: 2021-02-05T00:39:23.651Z
 ---
 
 # Raspberry Image Builder
 <img src="https://socialify.git.ci/pyavitz/rpi-img-builder/image?description=1&font=KoHo&forks=1&issues=1&logo=https%3A%2F%2Fupload.wikimedia.org%2Fwikipedia%2Fde%2Fthumb%2Fc%2Fcb%2FRaspberry_Pi_Logo.svg%2F475px-Raspberry_Pi_Logo.svg.png&owner=1&pattern=Charlie%20Brown&stargazers=1&theme=Dark" alt="rpi-img-builder" width="640" height="320" />
 
 ## The boards and distributions that are currently supported
-* Raspberry Pi 4B (bcm2711) | Debian, Devuan and Ubuntu
-* Raspberry Pi 3/A/B/+ (bcm2710) | Debian, Devuan and Ubuntu
-* Raspberry Pi 0/W/B/+ (bcm2708) | Debian and Devuan
+* Raspberry Pi 4B | Debian, Devuan and Ubuntu
+* Raspberry Pi 2/3/A/B/+ | Debian, Devuan and Ubuntu
+* Raspberry Pi 0/W/B/+ | Debian and Devuan
+* [Raspberry Pi Hardware](https://www.raspberrypi.org/documentation/hardware/raspberrypi)
 
 ## Dependencies
 
 In order to install the required dependencies, run the following command:
-
 
 ```
 sudo apt install build-essential bison bc git dialog patch dosfstools zip unzip qemu debootstrap \
@@ -32,21 +32,22 @@ This has been tested on an AMD64/x86_64 system running on [Debian Buster](https:
 
 Alternatively, you can run the command `make ccompile` in this directory.
 
-
 ## Docker
 
 To build using [Docker](https://www.docker.com/), follow the instructions on the [Wiki](https://wiki.arm-image-builder.xyz/Docker) or use the other [builder](https://github.com/pyavitz/arm-img-builder).
 
-# Instructions
+---
 
-## Install dependencies
+## Instructions
+
+#### Install dependencies
 
 ```sh
 make ccompile	# Install all dependencies
 make ncompile	# Install native dependencies
 ```
 
-## Menu interface
+#### Menu interface
 
 ```sh
 make config     # Create user data file (Foundation Kernel)
@@ -55,7 +56,8 @@ make menu       # Open menu interface
 make dialogrc   # Set builder theme (optional)
 ```
 
-## Config Menu
+#### Config Menu
+
 ```sh
 Username:       # Your username
 Password:       # Your password
@@ -77,8 +79,7 @@ rtl88XXbu:      # 1 to add Realtek 88X2BU wireless support
 rtl88XXcu:      # 1 to add Realtek 8811CU/21CU wireless support
 ```
 
-## Mainline Config Menu (RPi4B ONLY)
-
+#### Mainline Config Menu (RPi4B ONLY)
 
 ```sh
 Username:       # Your username
@@ -101,8 +102,11 @@ rtl88XXau:      # 1 to add Realtek 8812AU/14AU/21AU wireless support
 rtl88XXbu:      # 1 to add Realtek 88X2BU wireless support
 rtl88XXcu:      # 1 to add Realtek 8811CU/21CU wireless support
 ```
+### Furthermore
+If interested in building a Raspberry Pi 4B image that uses mainline u-boot and linux
+use our other [builder](https://github.com/pyavitz/debian-image-builder).
 
-## User defconfig
+#### User defconfig
 
 ```sh
 nano userdata.txt
@@ -111,20 +115,23 @@ custom_defconfig=1
 MYCONFIG="nameofyour_defconfig"
 ```
 
-## User patches
+#### User patches
 
 ```sh
 Patches "-p1" placed in patches/userpatches are applied during
 compilation. This works for both Foundation and Mainline kernels.
 ```
-## Furthermore
 
-If interested in building a Raspberry Pi 4B image that uses mainline u-boot and linux
-use our other [builder](https://github.com/pyavitz/debian-image-builder).
+#### User scripts
+```sh
+nano userdata.txt
+# place scripts in files/userscripts directory
+userscripts=0	# 1 to enable | 0 to disable	
+``` 
 
-# Command list
+## Command list
 
-## Raspberry Pi 4B
+#### Raspberry Pi 4B
 
 ```sh
 # AARCH64
@@ -134,7 +141,7 @@ make mainline	# Mainline
 make image
 ```
 
-## Raspberry Pi 3A/B/+
+#### Raspberry Pi 2/3/A/B/+
 
 ```sh
 # AARCH64
@@ -143,7 +150,7 @@ make rpi3-kernel
 make rpi3-image
 ```
 
-## Raspberry Pi 0/0W/B/+
+#### Raspberry Pi 0/0W/B/+
 
 ```sh
 # ARMv6l
@@ -152,14 +159,14 @@ make rpi-kernel
 make rpi-image
 ```
 
-## Root Filesystems
+#### Root Filesystems
 
 ```sh
 make rootfs   # arm64
 make rootfsv6 # armel
 ```
 
-## Miscellaneous
+#### Miscellaneous
 
 ```sh
 make cleanup    # Clean up image errors
@@ -170,32 +177,26 @@ make helper     # Download a binary Linux package
 make check      # Shows latest revision of selected branch
 ```
 
-# Usage
+## Usage
 
-
-## Debian/Devuan
-
-___
-
-### /boot/rename_to_credentials.txt
-
-
+### Debian / Devuan
+#### /boot/rename_to_credentials.txt
 ```sh
 Rename file to credentials.txt and input your wifi information.
 
-SSID=" "									 # Service set identifier
-PASSKEY=" "								# Wifi password
-COUNTRYCODE=" "						# Your country code
+SSID=" "			# Service set identifier
+PASSKEY=" "			# Wifi password
+COUNTRYCODE=" "			# Your country code
 
 # set static ip
-MANUAL=n									 # Set to y to enable a static ip
-IPADDR=" "								 # Static ip address
-NETMASK=" "								# Your Netmask
-GATEWAY=" "								# Your Gateway
-NAMESERVERS=" "						# Your preferred dns
+MANUAL=n			# Set to y to enable a static ip
+IPADDR=" "			# Static ip address
+NETMASK=" "			# Your Netmask
+GATEWAY=" "			# Your Gateway
+NAMESERVERS=" "			# Your preferred dns
 
-CHANGE=n									 # Set to y to enable
-HOSTNAME="raspberrypi"		 # Set the system's host name
+CHANGE=n			# Set to y to enable
+HOSTNAME="raspberrypi"		# Set the system's host name
 BRANDING="Raspberry Pi"		# Set ASCII text banner
 
 For headless use: ssh user@ipaddress
@@ -208,31 +209,29 @@ files, whilst leaving rename_to_credentials.txt untouched.
 /etc/opt/wpa_supplicant.manual
 ```
 
-## Ubuntu
-### /boot/rename_to_credentials.txt
-
+### Ubuntu
+#### /boot/rename_to_credentials.txt
 ```sh
 Rename file to credentials.txt and input your wifi information.
 
-NAME=" "								   	# Name of the connection
-SSID=" "								 	  # Service set identifier
-PASSKEY=" "							    # Wifi password
-COUNTRYCODE=" "					    # Your country code
+NAME=" "			# Name of the connection
+SSID=" "			# Service set identifier
+PASSKEY=" "			# Wifi password
+COUNTRYCODE=" "			# Your country code
 
-MANUAL=n									   # Set to y to enable a static ip
-IPADDR=" "								   # Static ip address
-GATEWAY=" "								  # Your Gateway
-DNS=""										   # Your preferred dns
+MANUAL=n			# Set to y to enable a static ip
+IPADDR=" "			# Static ip address
+GATEWAY=" "			# Your Gateway
+DNS=""				# Your preferred dns
 
-CHANGE=n									   # Set to y to enable
-HOSTNAME="raspberrypi"		   # Set the system's host name
-BRANDING="Raspberry Pi"		  # Set ASCII text banner
+CHANGE=n			# Set to y to enable
+HOSTNAME="raspberrypi"		# Set the system's host name
+BRANDING="Raspberry Pi"		# Set ASCII text banner
 
 For headless use: ssh user@ipaddress
 ```
-# Usage on the Raspberry
 
-## Using deb-eeprom ([usb_storage.quirks](https://github.com/pyavitz/rpi-img-builder/issues/17))
+#### Using deb-eeprom ([usb_storage.quirks](https://github.com/pyavitz/rpi-img-builder/issues/17))
 
 ```sh
 Raspberry Pi 4B EEPROM Helper Script
@@ -247,8 +246,7 @@ Note:
 Upon install please run 'deb-eeprom -u' before using this script.
 ```
 
-## Using fetch (Kernel-Manager)
-
+#### Using fetch
 ```sh
 Fetch, Linux kernel installer for the Raspberry Pi Image Builder
 Usage: fetch -opt
@@ -263,7 +261,7 @@ Usage: fetch -opt
 
 fetch -h will list available options and kernel revisions
 ```
-## Simple wifi helper (Debian / Devuan)
+#### Simple wifi helper (Debian / Devuan)
 ```sh
 swh -h
 
@@ -274,7 +272,7 @@ swh -h
    -W       Edit wpa supplicant
    -I       Edit interfaces
 ```
-## CPU frequency scaling
+#### CPU frequency scaling
 ```sh
 Usage: governor -opt
 
@@ -290,6 +288,6 @@ A service runs 'governor -r' during boot.
 
 ---
 
-# Support
+### Support
 
 Should you come across any bugs, feel free to either open an issue on GitHub or talk with us directly by joining our channel on Freenode; [`#debianarm-port`](irc://irc.freenode.net/#debianarm-port)
