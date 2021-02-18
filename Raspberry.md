@@ -2,13 +2,12 @@
 title: Raspberry Pi Image Builder
 description: Image Builder for the Raspberry Pi
 published: true
-date: 2021-02-05T00:46:55.593Z
+date: 2021-02-18T00:56:03.255Z
 tags: buiider, image, raspberry, rpi-image-builder
 editor: markdown
-dateCreated: 2021-02-05T00:39:23.651Z
+dateCreated: 2021-02-17T15:15:57.993Z
 ---
 
-# Raspberry Image Builder
 <img src="https://socialify.git.ci/pyavitz/rpi-img-builder/image?description=1&font=KoHo&forks=1&issues=1&logo=https%3A%2F%2Fupload.wikimedia.org%2Fwikipedia%2Fde%2Fthumb%2Fc%2Fcb%2FRaspberry_Pi_Logo.svg%2F475px-Raspberry_Pi_Logo.svg.png&owner=1&pattern=Charlie%20Brown&stargazers=1&theme=Dark" alt="rpi-img-builder" width="640" height="320" />
 
 ## The boards and distributions that are currently supported
@@ -25,7 +24,7 @@ In order to install the required dependencies, run the following command:
 sudo apt install build-essential bison bc git dialog patch dosfstools zip unzip qemu debootstrap \
                  qemu-user-static rsync kmod cpio flex libssl-dev libncurses5-dev parted fakeroot \
                  swig aria2 pv toilet figlet crossbuild-essential-arm64 crossbuild-essential-armel \
-                 distro-info-data lsb-release xz-utils curl
+                 distro-info-data lsb-release xz-utils curl btrfs-progs
 ```
 
 This has been tested on an AMD64/x86_64 system running on [Debian Buster](https://www.debian.org/releases/buster/debian-installer/).
@@ -34,7 +33,7 @@ Alternatively, you can run the command `make ccompile` in this directory.
 
 ## Docker
 
-To build using [Docker](https://www.docker.com/), follow the instructions on the [Wiki](https://wiki.arm-image-builder.xyz/Docker) or use the other [builder](https://github.com/pyavitz/arm-img-builder).
+To build using [Docker](https://www.docker.com/), follow the install [instructions](https://docs.docker.com/engine/install/) and use our other [builder](https://github.com/pyavitz/arm-img-builder).
 
 ---
 
@@ -73,6 +72,10 @@ Debian:		# 1 to select (buster/bullseye/testing/unstable/sid)
 Devuan:		# 1 to select (beowulf/testing/unstable/ceres)
 Ubuntu:		# 1 to select (20.04.1/20.10)
 
+Filesystem
+ext4:		# 1 to select (default)
+btrfs:		# 1 to select (fetch and make helper not supported)
+
 Wireless        (aarch64)
 rtl88XXau:      # 1 to add Realtek 8812AU/14AU/21AU wireless support
 rtl88XXbu:      # 1 to add Realtek 88X2BU wireless support
@@ -96,6 +99,10 @@ Release:	# Supported: buster, beowulf and 20.04.1
 Debian:		# 1 to select (buster/bullseye/testing/unstable/sid)
 Devuan:		# 1 to select (beowulf/testing/unstable/ceres)
 Ubuntu:		# 1 to select (20.04.1/20.10)
+
+Filesystem
+ext4:		# 1 to select (default)
+btrfs:		# 1 to select (fetch not supported)
 
 Wireless        (aarch64)
 rtl88XXau:      # 1 to add Realtek 8812AU/14AU/21AU wireless support
@@ -239,7 +246,7 @@ Usage: deb-eeprom -opt
 
    -v       Edit version variable
    -U       Upgrade eeprom package
-   -w       Setup and install usb boot
+   -w       Setup and install usb boot (ext4 only)
    -u       Update script
 
 Note:
@@ -251,7 +258,7 @@ Upon install please run 'deb-eeprom -u' before using this script.
 Fetch, Linux kernel installer for the Raspberry Pi Image Builder
 Usage: fetch -opt
 
-   -1       Linux 5.4.y LTS
+   -1       Linux 5.10.y LTS
    -2       Linux Stable Branch
    -3       Linux Mainline Branch
    -4       Update Boot Binaries
@@ -259,7 +266,7 @@ Usage: fetch -opt
    -u       Update Fetch
    -s       Not working? Setup Fetch
 
-fetch -h will list available options and kernel revisions
+fetch -u will list available options and kernel revisions
 ```
 #### Simple wifi helper (Debian / Devuan)
 ```sh
