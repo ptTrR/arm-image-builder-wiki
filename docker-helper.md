@@ -1,23 +1,23 @@
 ---
-title: Docker-Helper
-description: 
+title: Docker-Addon
+description: Helper for compiling the image with docker
 published: true
-date: 2021-02-05T00:48:22.267Z
+date: 2021-02-18T00:54:43.790Z
 tags: 
 editor: markdown
-dateCreated: 2021-02-05T00:39:40.909Z
+dateCreated: 2021-02-17T15:16:10.810Z
 ---
 
 # Addon for the Arm Image Builder Docker
 
-**All docker work done by:** https://github.com/ptTrR/arm-image-builder-docker
+**All docker work done by:** https://github.com/ptr1337/arm-image-builder-docker
 
 ### Builders:
 * https://github.com/pyavitz/rpi-img-builder
 * https://github.com/pyavitz/debian-image-builder
 
 The initial docker installation and setup still applies so I suggest you
-read the [README](https://github.com/ptTrR/arm-image-builder-docker/blob/main/README.md) before trying to use this.
+read the [README](https://github.com/ptr1337/arm-image-builder-docker/blob/main/README.md) before trying to use this.
 
 ---
 
@@ -74,7 +74,7 @@ sudo systemctl restart docker
 ### Moving files
 ```sh
 Example:
-mv -f *.img.xz /images/
+mv -f *img* /images/
 
 This applies to anything created in the container.
 ```
