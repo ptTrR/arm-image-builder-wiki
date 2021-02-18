@@ -1,11 +1,11 @@
 ---
 title: prebuilt Images
 description: 
-published: 1
-date: 2021-01-14T05:23:10.219Z
+published: true
+date: 2021-02-18T00:56:06.837Z
 tags: 
 editor: markdown
-dateCreated: 2020-12-29T20:13:34.502Z
+dateCreated: 2021-02-17T15:15:50.123Z
 ---
 
 # Downloading prebuilt Images
