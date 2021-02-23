@@ -2,7 +2,7 @@
 title: Raspberry Pi Image Builder
 description: Image Builder for the Raspberry Pi
 published: true
-date: 2021-02-18T00:56:03.255Z
+date: 2021-02-23T18:27:11.955Z
 tags: buiider, image, raspberry, rpi-image-builder
 editor: markdown
 dateCreated: 2021-02-17T15:15:57.993Z
@@ -202,7 +202,7 @@ NETMASK=" "			# Your Netmask
 GATEWAY=" "			# Your Gateway
 NAMESERVERS=" "			# Your preferred dns
 
-CHANGE=n			# Set to y to enable
+CHANGE=y			# Set to n to disable
 HOSTNAME="raspberrypi"		# Set the system's host name
 BRANDING="Raspberry Pi"		# Set ASCII text banner
 
@@ -231,7 +231,7 @@ IPADDR=" "			# Static ip address
 GATEWAY=" "			# Your Gateway
 DNS=""				# Your preferred dns
 
-CHANGE=n			# Set to y to enable
+CHANGE=y			# Set to n to disable
 HOSTNAME="raspberrypi"		# Set the system's host name
 BRANDING="Raspberry Pi"		# Set ASCII text banner
 
