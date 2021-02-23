@@ -2,10 +2,10 @@
 title: Docker instructions
 description: 
 published: true
-date: 2021-02-05T00:49:20.658Z
+date: 2021-02-23T18:08:43.012Z
 tags: 
 editor: markdown
-dateCreated: 2021-02-05T00:39:06.494Z
+dateCreated: 2021-02-17T15:15:46.187Z
 ---
 
 <img src="https://socialify.git.ci/ptTrR/arm-img-builder-docker/image?description=1&descriptionEditable=Build%20customized%20arm%20images%20with%20docker&font=Bitter&forks=1&issues=1&logo=https%3A%2F%2Fwww.docker.com%2Fsites%2Fdefault%2Ffiles%2Fd8%2F2019-07%2Fvertical-logo-monochromatic.png&owner=1&pattern=Charlie%20Brown&pulls=1&stargazers=1&theme=Dark" alt="arm-img-builder-docker" width="640" height="320" />
@@ -47,13 +47,13 @@ The official instruction for installing docker-compose on arm devices isnt worki
 You can follow this guide for the installation:
 https://dev.to/rohansawant/installing-docker-and-docker-compose-on-the-raspberry-pi-in-5-simple-steps-3mgl
 
-### Torubleshooting at docker
-If you got some problems at using for compiling the image you should install the following on your host system:
+### Torubleshooting if building the image is failing
+If you got some problems at using for compiling the image or the docker container you should install the following on your host system:
 
 ```
 sudo apt install qemu-user-static #debian/ubuntu
 
-sudo pacman -S qemu aarch64-linux-gnu-gcc qemu-arch-extra #arch and other distros
+sudo pacman -S qemu aarch64-linux-gnu-gcc qemu-arch-extra #arch(aur must be maybe enabled)
 
 if there are still problems run the follwing command:
 
@@ -64,7 +64,7 @@ docker run --rm --privileged multiarch/qemu-user-static --reset -p yes
 ### Clone my repo
 
 ```
-git clone https://github.com/ptTrR/arm-img-builder-docker
+git clone https://github.com/ptr1337/arm-img-builder-docker
 ```
 or create the docker-compose.yml:
 
@@ -74,10 +74,11 @@ services:
 
   arm-img-builder:
 #    build: .  #uncomment for building 
-    image: pttrr/arm-img-builder:latest 
-#    image: pttrr/arm-img-builder:native #uncomment for native compiling
+    image: pttrr/arm-img-builder:latest (for crosscompiling)
+#    image: pttrr/arm-img-builder:native (if building on a arm64 with docker)
     privileged: true
     container_name: arm-img-builder
+    stdin_open: true
     tty: true
 #    restart: always
     volumes:
@@ -99,11 +100,12 @@ If your container is successfully started you have to exec into it:
 ```
 docker exec -it arm-img-builder bash
 ```
-### Docker-Helper
+### Docker-Addon
 
 We also created a "docker-helper" which is aimed for guys which not using docker that often or never used it. 
 Just check this link:
-https://wiki.arm-image-builder.xyz/en/docker-helper
+
+https://wiki.arm-image-builder.xyz/en/docker-addon
 
 ### Supported Builder
 
