@@ -2,7 +2,7 @@
 title: prebuilt Images
 description: 
 published: true
-date: 2021-02-18T00:56:06.837Z
+date: 2021-02-24T12:25:23.146Z
 tags: 
 editor: markdown
 dateCreated: 2021-02-17T15:15:50.123Z
@@ -18,6 +18,15 @@ https://images.arm-image-builder.xyz/public/images
 **Important: Not every image is verified and nor may work**
 
 # Usage after flashing
+
+## Userlogin (only at prebuilt images):
+### /boot/userdata.txt
+```
+Change the USername and the password like you want. 
+Standard is:
+Username=pi
+Password=board
+```
 
 ## Debian / Devuan
 
