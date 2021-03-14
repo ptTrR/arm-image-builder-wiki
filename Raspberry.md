@@ -1,11 +1,11 @@
 ---
 title: Raspberry Pi Image Builder
 description: Image Builder for the Raspberry Pi
-published: true
-date: 2021-02-23T18:27:11.955Z
+published: 1
+date: 2021-03-14T19:26:57.707Z
 tags: buiider, image, raspberry, rpi-image-builder
 editor: markdown
-dateCreated: 2021-02-17T15:15:57.993Z
+dateCreated: 2021-03-14T19:18:55.960Z
 ---
 
 <img src="https://socialify.git.ci/pyavitz/rpi-img-builder/image?description=1&font=KoHo&forks=1&issues=1&logo=https%3A%2F%2Fupload.wikimedia.org%2Fwikipedia%2Fde%2Fthumb%2Fc%2Fcb%2FRaspberry_Pi_Logo.svg%2F475px-Raspberry_Pi_Logo.svg.png&owner=1&pattern=Charlie%20Brown&stargazers=1&theme=Dark" alt="rpi-img-builder" width="640" height="320" />
@@ -21,13 +21,17 @@ dateCreated: 2021-02-17T15:15:57.993Z
 In order to install the required dependencies, run the following command:
 
 ```
-sudo apt install build-essential bison bc git dialog patch dosfstools zip unzip qemu debootstrap \
-                 qemu-user-static rsync kmod cpio flex libssl-dev libncurses5-dev parted fakeroot \
-                 swig aria2 pv toilet figlet crossbuild-essential-arm64 crossbuild-essential-armel \
-                 distro-info-data lsb-release xz-utils curl btrfs-progs
+sudo apt install \
+	build-essential bison bc git dialog patch dosfstools zip unzip qemu debootstrap \
+	qemu-user-static rsync kmod cpio flex libssl-dev libncurses5-dev parted fakeroot \
+	swig aria2 pv toilet figlet distro-info-data lsb-release xz-utils curl e2fsprogs \
+	btrfs-progs kpartx crossbuild-essential-arm64 crossbuild-essential-armel gcc-8 \
+	gcc-8-arm-linux-gnueabi gcc-9-arm-linux-gnueabi gcc-10-arm-linux-gnueabi gcc-9 \
+	gcc-8-aarch64-linux-gnu gcc-9-aarch64-linux-gnu gcc-10-aarch64-linux-gnu gcc-10 \
+	debian-archive-keyring debian-keyring make
 ```
 
-This has been tested on an AMD64/x86_64 system running on [Debian Buster](https://www.debian.org/releases/buster/debian-installer/).
+This has been tested on an AMD64/x86_64 system running on [Ubuntu Focal](https://releases.ubuntu.com/20.04/).
 
 Alternatively, you can run the command `make ccompile` in this directory.
 
@@ -42,7 +46,7 @@ To build using [Docker](https://www.docker.com/), follow the install [instructio
 #### Install dependencies
 
 ```sh
-make ccompile	# Install all dependencies
+make ccompile	# Install cross dependencies
 make ncompile	# Install native dependencies
 ```
 
@@ -62,24 +66,19 @@ Username:       # Your username
 Password:       # Your password
 
 Linux kernel
-Branch:         # Supported: 5.4.y and above
+Branch:         # Supported: 5.10.y and above
 Menuconfig:     # 1 to run kernel menuconfig
 Crosscompile:   # 1 to cross compile | 0 to native compile
 
 Distributions
-Release:	# Supported: buster, beowulf and 20.04.1
+Release:	# Supported: buster, beowulf and 20.04.2
 Debian:		# 1 to select (buster/bullseye/testing/unstable/sid)
 Devuan:		# 1 to select (beowulf/testing/unstable/ceres)
-Ubuntu:		# 1 to select (20.04.1/20.10)
+Ubuntu:		# 1 to select (20.04.1/20.04.2/20.10)
 
 Filesystem
 ext4:		# 1 to select (default)
-btrfs:		# 1 to select (fetch and make helper not supported)
-
-Wireless        (aarch64)
-rtl88XXau:      # 1 to add Realtek 8812AU/14AU/21AU wireless support
-rtl88XXbu:      # 1 to add Realtek 88X2BU wireless support
-rtl88XXcu:      # 1 to add Realtek 8811CU/21CU wireless support
+btrfs:		# 1 to select
 ```
 
 #### Mainline Config Menu (RPi4B ONLY)
@@ -95,20 +94,16 @@ Menuconfig:     # 1 to run kernel menuconfig
 Crosscompile:   # 1 to cross compile | 0 to native compile
 
 Distributions
-Release:	# Supported: buster, beowulf and 20.04.1
+Release:	# Supported: buster, beowulf and 20.04.2
 Debian:		# 1 to select (buster/bullseye/testing/unstable/sid)
 Devuan:		# 1 to select (beowulf/testing/unstable/ceres)
-Ubuntu:		# 1 to select (20.04.1/20.10)
+Ubuntu:		# 1 to select (20.04.1/20.04.2/20.10)
 
 Filesystem
 ext4:		# 1 to select (default)
-btrfs:		# 1 to select (fetch not supported)
-
-Wireless        (aarch64)
-rtl88XXau:      # 1 to add Realtek 8812AU/14AU/21AU wireless support
-rtl88XXbu:      # 1 to add Realtek 88X2BU wireless support
-rtl88XXcu:      # 1 to add Realtek 8811CU/21CU wireless support
+btrfs:		# 1 to select
 ```
+
 ### Furthermore
 If interested in building a Raspberry Pi 4B image that uses mainline u-boot and linux
 use our other [builder](https://github.com/pyavitz/debian-image-builder).
@@ -246,14 +241,14 @@ Usage: deb-eeprom -opt
 
    -v       Edit version variable
    -U       Upgrade eeprom package
-   -w       Setup and install usb boot (ext4 only)
+   -w       Setup and install usb boot
    -u       Update script
 
 Note:
 Upon install please run 'deb-eeprom -u' before using this script.
 ```
 
-#### Using fetch
+#### Using fetch ([initrd support](https://github.com/pyavitz/rpi-img-builder/pull/26))
 ```sh
 Fetch, Linux kernel installer for the Raspberry Pi Image Builder
 Usage: fetch -opt
